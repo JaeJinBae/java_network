@@ -1,5 +1,8 @@
 package java_network;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -17,8 +20,18 @@ public class ParseURL {
 			System.out.printf("port: %s\n ", opinion.getPort());
 			System.out.printf("path: %s\n ", opinion.getPath());
 			System.out.printf("filename: %s\n ", opinion.getFile());
+			
+			BufferedReader br= new BufferedReader(new InputStreamReader(opinion.openStream()));
+			String line=null;
+			
+			while((line=br.readLine())!=null){
+				System.out.println(line);
+			}
+			br.close();
 		} catch (MalformedURLException e) {
-			System.err.println("¿ﬂ∏¯µ» URL ¡÷º“");
+			System.err.println("ÏûòÎ™ªÎêú URL Ï£ºÏÜå");
+			e.printStackTrace();
+		}catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
