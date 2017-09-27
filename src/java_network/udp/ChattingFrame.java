@@ -1,12 +1,12 @@
 package java_network.udp;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class ChattingFrame extends JFrame {
 	private JTextArea ta;
@@ -42,5 +42,5 @@ public class ChattingFrame extends JFrame {
 			tf.selectAll();
 			ta.setCaretPosition(ta.getDocument().getLength());
 		}
-	}
+	};
 }
